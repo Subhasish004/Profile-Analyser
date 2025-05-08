@@ -1,0 +1,28 @@
+package com.analyser.service;
+
+import com.analyser.model.ResumeInfo;
+import com.analyser.repository.ResumeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ResumeService {
+
+    @Autowired
+    private final ResumeRepository resumeRepository;
+
+    public ResumeService(ResumeRepository repository) {
+        this.resumeRepository = repository;
+    }
+
+    public ResumeInfo saveResume(String text, String name, String email, String phone) {
+        ResumeInfo info = new ResumeInfo();
+        info.setRawText(text);
+        info.setName(name);
+        info.setEmail(email);
+        info.setPhone(phone);
+        return resumeRepository.save(info);
+    }
+
+
+}

@@ -1,0 +1,22 @@
+package com.analyser.model;
+
+import jakarta.persistence.*;
+
+	@Entity
+	@Lombok
+	@Table(name = "resume_info")
+	public class ResumeInfo {
+
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
+
+	    private String name;
+	    private String email;
+	    private String phone;
+
+	    private String skills; // comma-separated: "Java, Spring Boot, SQL"
+	    private String experience;
+	    private String education;
+	
+}

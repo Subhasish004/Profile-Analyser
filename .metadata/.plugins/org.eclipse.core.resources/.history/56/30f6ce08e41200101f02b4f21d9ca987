@@ -1,0 +1,5 @@
+package com.analyser.model;
+
+public class ResumeInfo {
+
+}

@@ -1,0 +1,31 @@
+
+# ===============================
+# = Spring Boot Configuration =
+# ===============================
+spring.application.name=ProfileAnalyser
+# Server Port
+server.port=8080
+
+# PostgreSQL DB Config
+spring.datasource.url=jdbc:postgresql://localhost:5432/profile_analyzer_db
+spring.datasource.username=postgres
+spring.datasource.password=postgre23
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.datasource.hikari.connection-init-sql=SET NAMES 'UTF8'
+
+spring.datasource.hikari.maximum-pool-size=10
+spring.datasource.hikari.minimum-idle=5
+spring.datasource.hikari.idle-timeout=30000
+
+# JPA/Hibernate Config
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+
+
+# Optional: Logging SQL queries to console
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql=TRACE
+

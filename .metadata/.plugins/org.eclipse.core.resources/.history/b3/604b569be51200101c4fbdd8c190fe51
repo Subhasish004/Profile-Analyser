@@ -1,0 +1,19 @@
+package com.analyser.controller;
+
+import com.analyser.model.ResumeInfo;
+import com.analyser.service.ResumeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/resume")
+public class ResumeController {
+
+    @Autowired
+    private ResumeService resumeService;
+
+    @PostMapping("/save")
+    public ResumeInfo saveResume(@RequestBody ResumeInfo info) {
+        return resumeService.saveResume(info);
+    }
+}
